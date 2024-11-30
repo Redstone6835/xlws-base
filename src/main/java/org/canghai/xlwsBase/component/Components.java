@@ -27,38 +27,38 @@ public class Components {
     );
 
     // 玩家攻击力
-    public static final DataComponentType<String> PLAYER_ATTACK = Registry.register(
+    public static final DataComponentType<Float> PLAYER_ATTACK = Registry.register(
             Registries.DATA_COMPONENT_TYPE,
             Identifier.of(XlwsBase.MOD_ID, "player_attack"),
-            DataComponentType.<String>builder().codec(null).build()
+            DataComponentType.<Float>builder().codec(Codec.FLOAT).build()
     );
 
     // 玩家灵力值
-    public static final DataComponentType<String> PLAYER_SPIRITUALITY = Registry.register(
+    public static final DataComponentType<Float> PLAYER_SPIRITUALITY = Registry.register(
             Registries.DATA_COMPONENT_TYPE,
             Identifier.of(XlwsBase.MOD_ID, "player_spirituality"),
-            DataComponentType.<String>builder().codec(null).build()
+            DataComponentType.<Float>builder().codec(Codec.FLOAT).build()
     );
 
     // 玩家防御力
-    public static final DataComponentType<String> PLAYER_DEFENSE = Registry.register(
+    public static final DataComponentType<Float> PLAYER_DEFENSE = Registry.register(
             Registries.DATA_COMPONENT_TYPE,
             Identifier.of(XlwsBase.MOD_ID, "player_defense"),
-            DataComponentType.<String>builder().codec(null).build()
+            DataComponentType.<Float>builder().codec(Codec.FLOAT).build()
     );
 
     // 玩家攻击速度
-    public static final DataComponentType<String> PLAYER_ATTACK_SPEED = Registry.register(
+    public static final DataComponentType<Float> PLAYER_ATTACK_SPEED = Registry.register(
             Registries.DATA_COMPONENT_TYPE,
             Identifier.of(XlwsBase.MOD_ID, "player_attack_speed"),
-            DataComponentType.<String>builder().codec(null).build()
+            DataComponentType.<Float>builder().codec(Codec.FLOAT).build()
     );
 
     // 玩家经验值
-    public static final DataComponentType<String> PLAYER_EXP = Registry.register(
+    public static final DataComponentType<Float> PLAYER_EXP = Registry.register(
             Registries.DATA_COMPONENT_TYPE,
             Identifier.of(XlwsBase.MOD_ID, "player_exp"),
-            DataComponentType.<String>builder().codec(null).build()
+            DataComponentType.<Float>builder().codec(Codec.FLOAT).build()
     );
 
     // 玩家境界

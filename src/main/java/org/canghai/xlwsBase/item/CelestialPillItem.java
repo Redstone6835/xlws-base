@@ -30,10 +30,8 @@ public class CelestialPillItem extends Item {
     @Override
     public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand) {
         String pill_type = user.getStackInHand(hand).get(Components.PILL_TYPE);
-        // DEBUG
-        XlwsBase.LOGGER.debug("Player " + user.getName().getString() + " used a pill as " + pill_type + "!");
         switch (pill_type) {
-            case "hui_shen":
+            case "an_hun":
                 // 永久增加10生命值
                 // TODO
 

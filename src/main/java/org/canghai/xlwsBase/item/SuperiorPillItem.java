@@ -30,11 +30,9 @@ public class SuperiorPillItem extends Item {
     @Override
     public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand) {
         String pill_type = user.getStackInHand(hand).get(Components.PILL_TYPE);
-        // DEBUG
-        XlwsBase.LOGGER.debug("Player " + user.getName().getString() + " used a pill as " + pill_type + "!");
         switch (pill_type) {
             case "hui_shen":
-                // 永久增加10生命值
+                // 恢复20%生命值
                 // TODO
 
             // TODO:完善丹药效果

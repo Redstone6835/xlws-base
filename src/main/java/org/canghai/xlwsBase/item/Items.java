@@ -61,12 +61,12 @@ public class Items {
     );
     // 仙品丹药。
     public static final Item CELESTIAL_PILL = register(
-            new CelestialPillItem(new Item.Settings()),
+            new CelestialPillItem(new Item.Settings().component(Components.PILL_TYPE, "null")),
             "celestial_pill"
     );
     // 稀世丹药。
     public static final Item RARE_PILL = register(
-            new RarePillItem(new Item.Settings()),
+            new RarePillItem(new Item.Settings().component(Components.PILL_TYPE, "null")),
             "rare_pill"
     );
 
