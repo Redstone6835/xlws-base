@@ -1,6 +1,7 @@
 package org.canghai.xlwsBase.block;
 
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
+import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
 import net.minecraft.item.*;
@@ -27,27 +28,19 @@ public class Blocks {
 
         return Registry.register(Registries.BLOCK, id, block);
     }
-    /**
-     * 添加静态初始化方法，确保该类被加载。
-     * 该方法用于占位。
-     * 该方法在JVM上入栈时，该类的全部内容都会被加载，从而达到加载该类中的成员的目的。
-     */
-    public static void initialize() {}
-
-    // 创建一个新的物品组。
-    public static final RegistryKey<ItemGroup> SERVER_ITEM_GROUP_KEY = RegistryKey.of(
-            Registries.ITEM_GROUP.getKey(),
-            Identifier.of(XlwsBase.MOD_ID, "item_group")
-    );
-    public static final ItemGroup SERVER_ITEM_GROUP = FabricItemGroup.builder()
-            .icon(() -> new ItemStack(Items.DIAMOND_SWORD))
-            .displayName(Text.translatable("itemGroup.xlws_base"))
-            .build();
 
     // 开始添加方块。
+    // 炼丹炉。
     public static final Block ALCHEMY_FURNACE = register(
             new Block(AbstractBlock.Settings.create().sounds(BlockSoundGroup.STONE)),
             "alchemy_furnace"
     );
 
+    /**
+     * 添加静态初始化方法，确保该类被加载。
+     * 该方法用于占位。
+     * 该方法在JVM上入栈时，该类的全部内容都会被加载，从而达到加载该类中的成员的目的。
+     */
+    public static void initialize() {
+    }
 }

@@ -1,0 +1,5 @@
+{
+  "variants": {
+    "": { "model": "xlws-base:block/alchemy_furnace" }
+  }
+}
