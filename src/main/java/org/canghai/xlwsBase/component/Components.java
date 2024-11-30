@@ -1,7 +1,7 @@
 package org.canghai.xlwsBase.component;
 
+import com.mojang.serialization.Codec;
 import net.minecraft.component.DataComponentType;
-import net.minecraft.potion.Potions;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
@@ -16,21 +16,14 @@ public class Components {
     public static final DataComponentType<String> PILL_TYPE = Registry.register(
             Registries.DATA_COMPONENT_TYPE,
             Identifier.of(XlwsBase.MOD_ID, "pill_type"),
-            DataComponentType.<String>builder().codec(null).build()
+            DataComponentType.<String>builder().codec(Codec.STRING).build()
     );
 
     // 药草种类。
     public static final DataComponentType<String> HERB_TYPE = Registry.register(
             Registries.DATA_COMPONENT_TYPE,
             Identifier.of(XlwsBase.MOD_ID, "herb_type"),
-            DataComponentType.<String>builder().codec(null).build()
-    );
-
-    // 丹药质量。
-    public static final DataComponentType<String> PILL_QUALITY = Registry.register(
-            Registries.DATA_COMPONENT_TYPE,
-            Identifier.of(XlwsBase.MOD_ID, "pill_quality"),
-            DataComponentType.<String>builder().codec(null).build()
+            DataComponentType.<String>builder().codec(Codec.STRING).build()
     );
 
     // 玩家攻击力
@@ -72,15 +65,15 @@ public class Components {
     public static final DataComponentType<String> PLAYER_REALM = Registry.register(
             Registries.DATA_COMPONENT_TYPE,
             Identifier.of(XlwsBase.MOD_ID, "player_realm"),
-            DataComponentType.<String>builder().codec(null).build()
+            DataComponentType.<String>builder().codec(Codec.STRING).build()
     );
 
     // 玩家攻击范围
-    public static final DataComponentType<String> PLAYER_ATTACK_RANGE= Registry.register(
+    public static final DataComponentType<Float> PLAYER_ATTACK_RANGE= Registry.register(
             Registries.DATA_COMPONENT_TYPE,
             Identifier.of(XlwsBase.MOD_ID, "player_attack_range"),
-            DataComponentType.<String>builder().codec(null).build()
+            DataComponentType.<Float>builder().codec(Codec.FLOAT).build()
     );
     // 静态加载。
-    protected static void initialize() {}
+    public static void initialize() {}
 }

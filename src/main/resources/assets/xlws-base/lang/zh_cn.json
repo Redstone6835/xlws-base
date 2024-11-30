@@ -1,4 +1,17 @@
 {
+  "item.xlws-base.superior_pill.info.null": "上品丹药，但没有任何效果。",
+  "item.xlws-base.celestial_pill.info.null": "仙品丹药，但没有任何效果。",
+  "item.xlws-base.rare_pill.info.null": "稀世丹药，但没有任何效果。",
+  "item.xlws-base.superior_pill.info.hui_shen": "恢复20%生命值",
+  "item.xlws-base.celestial_pill.info.an_hun": "永久增加10生命值",
+  "item.xlws-base.rare_pill.info.huan_hun": "永久增加10生命值",
+  "item.xlws-base.superior_pill.null": "丹药",
+  "item.xlws-base.celestial_pill.null": "丹药",
+  "item.xlws-base.rare_pill.null": "丹药",
+  "item.xlws-base.superior_pill.hui_shen": "回神丹",
+  "item.xlws-base.celestial_pill.an_hun": "安魂丹",
+  "item.xlws-base.rare_pill.huan_hun": "还魂丹",
+  "item.xlws-base.pill.info.zhuang_yang": "Zhuang Yang",
   "block.xlws-base.alchemy_furnace": "炼丹炉",
   "itemGroup.xlws_base": "修罗武神"
 }

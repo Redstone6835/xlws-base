@@ -5,6 +5,8 @@ import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.PotionItem;
+import net.minecraft.potion.Potion;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.registry.RegistryKey;
@@ -37,18 +39,36 @@ public class Items {
             .build();
 
     // 添加物品。
-    // 丹药。
-    public static final Item PILL = register(
-            new PillItem(new Item.Settings().component(Components.HERB_TYPE, "null")),
-            "pill"
+    // 上品药草。
+    public static final Item SUPERIOR_HERB = register(
+            new HerbItem(new Item.Settings()),
+            "superior_herb"
     );
-
-    // 草药。
-    public static final Item HERB = register(
-            new Item(new Item.Settings()),
-            "herb"
+    // 仙品药草。
+    public static final Item CELESTIAL_HERB = register(
+            new HerbItem(new Item.Settings()),
+            "celestial_herb"
     );
-
+    // 稀世药草。
+    public static final Item RARE_HERB = register(
+            new HerbItem(new Item.Settings()),
+            "rare_herb"
+    );
+    // 上品丹药。
+    public static final Item SUPERIOR_PILL = register(
+            new SuperiorPillItem(new Item.Settings().component(Components.PILL_TYPE, "null")),
+            "superior_pill"
+    );
+    // 仙品丹药。
+    public static final Item CELESTIAL_PILL = register(
+            new CelestialPillItem(new Item.Settings()),
+            "celestial_pill"
+    );
+    // 稀世丹药。
+    public static final Item RARE_PILL = register(
+            new RarePillItem(new Item.Settings()),
+            "rare_pill"
+    );
 
     /**
      * 添加静态初始化方法，确保该类被加载。
@@ -60,8 +80,9 @@ public class Items {
         Registry.register(Registries.ITEM_GROUP, SERVER_ITEM_GROUP_KEY, SERVER_ITEM_GROUP);
         ItemGroupEvents.modifyEntriesEvent(SERVER_ITEM_GROUP_KEY).register(itemGroup -> {
             itemGroup.add(Blocks.ALCHEMY_FURNACE.asItem());
-            itemGroup.add(PILL);
-            itemGroup.add(HERB);
+            itemGroup.add(SUPERIOR_HERB);
+            itemGroup.add(CELESTIAL_HERB);
+            itemGroup.add(RARE_HERB);
             // 更多物品的添加
             // TODO
         });
