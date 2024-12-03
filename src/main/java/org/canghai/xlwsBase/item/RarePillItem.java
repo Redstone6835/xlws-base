@@ -10,7 +10,10 @@ import net.minecraft.util.*;
 import net.minecraft.world.World;
 import org.canghai.xlwsBase.XlwsBase;
 import org.canghai.xlwsBase.component.Components;
+import org.canghai.xlwsBase.component.PillCodec;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class RarePillItem extends Item {
@@ -20,19 +23,33 @@ public class RarePillItem extends Item {
 
     @Override
     public void appendTooltip(ItemStack stack, TooltipContext context, List<Text> tooltip, TooltipType type) {
-        String pill_type = stack.get(Components.PILL_TYPE);
-        tooltip.add(Text.translatable("item.xlws-base.rare_pill.info." + pill_type).formatted(Formatting.GOLD));
+        PillCodec pillCodec = stack.get(Components.PILL_TYPE);
+        String pill_name = pillCodec.getPill_name();
+        tooltip.add(Text.translatable("item.xlws-base.rare_pill.info." + pill_name).formatted(Formatting.GOLD));
     }
 
     @Override
     public String getTranslationKey(ItemStack stack) {
-        return super.getTranslationKey(stack) + '.' + stack.get(Components.PILL_TYPE);
+        PillCodec pillCodec = stack.get(Components.PILL_TYPE);
+        ArrayList<String> list = new ArrayList<>(Arrays.asList(super.getTranslationKey(stack).split(".")));
+        list.add(-2,pillCodec.getPill_name());
+        // 将List转化为String
+        StringBuilder sb = new StringBuilder();
+        for (String s : list) {
+            sb.append(s).append(".");
+        }
+        if (sb.length() > 0) {
+            sb.setLength(sb.length() - 2);
+        }
+        String pill_name = sb.toString();
+        return pill_name;
     }
 
     @Override
     public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand) {
-        String pill_type = user.getStackInHand(hand).get(Components.PILL_TYPE);
-        switch (pill_type) {
+        PillCodec pillCodec = user.getStackInHand(hand).get(Components.PILL_TYPE);
+        String pill_name = pillCodec.getPill_name();
+        switch (pill_name) {
             case "huan_hun":
                 // 永久增加10生命值
                 // TODO

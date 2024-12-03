@@ -15,6 +15,7 @@ import net.minecraft.util.Identifier;
 import org.canghai.xlwsBase.XlwsBase;
 import org.canghai.xlwsBase.block.Blocks;
 import org.canghai.xlwsBase.component.Components;
+import org.canghai.xlwsBase.component.PillCodec;
 
 /**
  * 将所有需要注册的物品全部添加至Items类中，和mojang的思路同理。
@@ -55,19 +56,79 @@ public class Items {
             "rare_herb"
     );
     // 上品丹药。
-    public static final Item SUPERIOR_PILL = register(
-            new SuperiorPillItem(new Item.Settings().component(Components.PILL_TYPE, "null")),
-            "superior_pill"
+    public static final Item HUI_SHEN = register(
+            new SuperiorPillItem(new Item.Settings().component(Components.PILL_TYPE, new PillCodec("superior_pill","hui_shen"))),
+            "hui_shen"
     );
-    // 仙品丹药。
-    public static final Item CELESTIAL_PILL = register(
-            new CelestialPillItem(new Item.Settings().component(Components.PILL_TYPE, "null")),
-            "celestial_pill"
+    public static final Item MING_GONG = register(
+            new SuperiorPillItem(new Item.Settings().component(Components.PILL_TYPE, new PillCodec("superior_pill","ming_gong"))),
+            "ming_gong"
     );
-    // 稀世丹药。
-    public static final Item RARE_PILL = register(
-            new RarePillItem(new Item.Settings().component(Components.PILL_TYPE, "null")),
-            "rare_pill"
+    public static final Item XU_JIA = register(
+            new SuperiorPillItem(new Item.Settings().component(Components.PILL_TYPE, new PillCodec("superior_pill","xu_jia"))),
+            "xu_jia"
+    );
+    public static final Item HUA_FENG = register(
+            new SuperiorPillItem(new Item.Settings().component(Components.PILL_TYPE, new PillCodec("superior_pill","hua_feng"))),
+            "hua_feng"
+    );
+    public static final Item YE_MING = register(
+            new SuperiorPillItem(new Item.Settings().component(Components.PILL_TYPE, new PillCodec("superior_pill","ye_ming"))),
+            "ye_ming"
+    );
+    public static final Item KANG_SU = register(
+            new SuperiorPillItem(new Item.Settings().component(Components.PILL_TYPE, new PillCodec("superior_pill","kang_su"))),
+            "kang_su"
+    );
+    public static final Item JING_XIN = register(
+            new SuperiorPillItem(new Item.Settings().component(Components.PILL_TYPE, new PillCodec("superior_pill","jing_xin"))),
+            "jing_xin"
+    );
+    public static final Item YING_XIU = register(
+            new SuperiorPillItem(new Item.Settings().component(Components.PILL_TYPE, new PillCodec("superior_pill","ying_xiu"))),
+            "ying_xiu"
+    );
+    public static final Item CHONG_MING = register(
+            new SuperiorPillItem(new Item.Settings().component(Components.PILL_TYPE, new PillCodec("superior_pill","chong_ming"))),
+            "chong_ming"
+    );
+    public static final Item CANG_TI = register(
+            new SuperiorPillItem(new Item.Settings().component(Components.PILL_TYPE, new PillCodec("superior_pill","cang_ti"))),
+            "cang_ti"
+    );
+    // 仙品丹药
+    public static final Item AN_HUN = register(
+            new CelestialPillItem(new Item.Settings().component(Components.PILL_TYPE, new PillCodec("celestial_pill","an_hun"))),
+            "an_hun"
+    );
+    public static final Item QI_XUE = register(
+            new CelestialPillItem(new Item.Settings().component(Components.PILL_TYPE, new PillCodec("celestial_pill","hui_shen"))),
+            "qi_xue"
+    );
+    public static final Item ZHUANG_YANG = register(
+            new CelestialPillItem(new Item.Settings().component(Components.PILL_TYPE, new PillCodec("celestial_pill","zhuang_yang"))),
+            "zhuang_yang"
+    );
+    public static final Item YIN_LING = register(
+            new CelestialPillItem(new Item.Settings().component(Components.PILL_TYPE, new PillCodec("celestial_pill","yin_ling"))),
+            "yin_ling"
+    );
+    // 稀世丹药
+    public static final Item HUAN_HUN = register(
+            new RarePillItem(new Item.Settings().component(Components.PILL_TYPE, new PillCodec("rare_pill","huan_hun"))),
+            "huan_hun"
+    );
+    public static final Item ZHOU_QI = register(
+            new RarePillItem(new Item.Settings().component(Components.PILL_TYPE, new PillCodec("rare_pill","zhou_qi"))),
+            "zhou_qi"
+    );
+    public static final Item CHONG_YANG = register(
+            new RarePillItem(new Item.Settings().component(Components.PILL_TYPE, new PillCodec("rare_pill","chong_yang"))),
+            "chong_yang"
+    );
+    public static final Item ZHOU_LING = register(
+            new RarePillItem(new Item.Settings().component(Components.PILL_TYPE, new PillCodec("rare_pill","zhou_ling"))),
+            "zhou_ling"
     );
 
     /**
@@ -83,6 +144,24 @@ public class Items {
             itemGroup.add(SUPERIOR_HERB);
             itemGroup.add(CELESTIAL_HERB);
             itemGroup.add(RARE_HERB);
+            itemGroup.add(HUI_SHEN);
+            itemGroup.add(MING_GONG);
+            itemGroup.add(XU_JIA);
+            itemGroup.add(HUA_FENG);
+            itemGroup.add(YING_XIU);
+            itemGroup.add(CHONG_MING);
+            itemGroup.add(CANG_TI);
+            itemGroup.add(AN_HUN);
+            itemGroup.add(QI_XUE);
+            itemGroup.add(ZHUANG_YANG);
+            itemGroup.add(YIN_LING);
+            itemGroup.add(HUAN_HUN);
+            itemGroup.add(ZHOU_QI);
+            itemGroup.add(CHONG_YANG);
+            itemGroup.add(ZHOU_LING);
+            itemGroup.add(YIN_LING);
+            itemGroup.add(HUAN_HUN);
+            itemGroup.add(ZHOU_QI);
             // 更多物品的添加
             // TODO
         });
