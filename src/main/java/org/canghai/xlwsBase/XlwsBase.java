@@ -3,6 +3,7 @@ package org.canghai.xlwsBase;
 import net.fabricmc.api.ModInitializer;
 import org.canghai.xlwsBase.block.Blocks;
 import org.canghai.xlwsBase.component.Components;
+import org.canghai.xlwsBase.event.ModEventListener;
 import org.canghai.xlwsBase.item.Items;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -18,5 +19,7 @@ public class XlwsBase implements ModInitializer {
         Items.initialize();
         // 加载Components类中的全部成员。
         Components.initialize();
+        // 加载所有监听器
+        ModEventListener.registerEvents();
     }
 }

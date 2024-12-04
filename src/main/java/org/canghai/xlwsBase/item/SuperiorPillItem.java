@@ -11,7 +11,6 @@ import net.minecraft.util.Hand;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.TypedActionResult;
 import net.minecraft.world.World;
-import org.canghai.xlwsBase.XlwsBase;
 import org.canghai.xlwsBase.component.Components;
 import org.canghai.xlwsBase.component.PillCodec;
 
@@ -34,15 +33,20 @@ public class SuperiorPillItem extends Item {
     @Override
     public String getTranslationKey(ItemStack stack) {
         PillCodec pillCodec = stack.get(Components.PILL_TYPE);
-        ArrayList<String> list = new ArrayList<>(Arrays.asList(super.getTranslationKey(stack).split(".")));
-        list.add(-2,pillCodec.getPill_name());
+        ArrayList<String> list = new ArrayList<>(Arrays.asList(super.getTranslationKey(stack).split("\\.")));
+        if (list.size() > 1) {
+            list.add(list.size() - 1, pillCodec.getPill_type());
+        } else {
+            // 处理列表为空或只有一个元素的情况
+            list.add(pillCodec.getPill_type());  // 直接添加到列表末尾
+        }
         // 将List转化为String
         StringBuilder sb = new StringBuilder();
         for (String s : list) {
             sb.append(s).append(".");
         }
         if (sb.length() > 0) {
-            sb.setLength(sb.length() - 2);
+            sb.setLength(sb.length() - 1);
         }
         String pill_name = sb.toString();
         return pill_name;

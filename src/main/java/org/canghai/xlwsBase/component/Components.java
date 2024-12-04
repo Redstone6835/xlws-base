@@ -11,18 +11,18 @@ import org.canghai.xlwsBase.XlwsBase;
  * 在这个类中定义所有用到的组件类型。
  */
 public class Components {
-    // 丹药种类。
+    // 丹药信息。
     public static final DataComponentType<PillCodec> PILL_TYPE = Registry.register(
             Registries.DATA_COMPONENT_TYPE,
             Identifier.of(XlwsBase.MOD_ID, "pill_type"),
-            DataComponentType.<PillCodec>builder().codec(PillCodec.PILL_CODEC).build()
+            DataComponentType.<PillCodec>builder().codec(Codecs.PILL_CODEC).build()
     );
 
     // 药草种类。
-    public static final DataComponentType<String> HERB_TYPE = Registry.register(
+    public static final DataComponentType<HerbCodec> HERB_TYPE = Registry.register(
             Registries.DATA_COMPONENT_TYPE,
             Identifier.of(XlwsBase.MOD_ID, "herb_type"),
-            DataComponentType.<String>builder().codec(Codec.STRING).build()
+            DataComponentType.<HerbCodec>builder().codec(Codecs.HERB_CODEC).build()
     );
 
     // 玩家攻击力
