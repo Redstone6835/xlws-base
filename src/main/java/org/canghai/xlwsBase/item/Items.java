@@ -25,7 +25,6 @@ import java.util.*;
  */
 public class Items {
     private static final Map<String, List<ItemStack>> itemMap = new HashMap<>();
-
     // 注册。
     public static Item register(Item item, String id) {
         Identifier itemID = new Identifier(XlwsBase.MOD_ID, id);
@@ -238,6 +237,9 @@ public class Items {
             itemGroup.add(CONG_RONG);
             itemGroup.add(XI_LING);
             itemGroup.add(HUI_SHEN);
+            itemGroup.add(KANG_SU);
+            itemGroup.add(YE_MING);
+            itemGroup.add(JING_XIN);
             itemGroup.add(MING_GONG);
             itemGroup.add(XU_JIA);
             itemGroup.add(HUA_FENG);
@@ -255,9 +257,6 @@ public class Items {
             itemGroup.add(YIN_LING);
             itemGroup.add(HUAN_HUN);
             itemGroup.add(ZHOU_QI);
-            itemGroup.add(KANG_SU);
-            itemGroup.add(YE_MING);
-            itemGroup.add(JING_XIN);
             // 更多物品的添加
             // TODO
         });

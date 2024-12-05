@@ -1,6 +1,7 @@
 package org.canghai.xlwsBase.item;
 
 import net.minecraft.client.item.TooltipType;
+import net.minecraft.entity.attribute.EntityAttributes;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -62,7 +63,8 @@ public class CelestialPillItem extends Item {
         switch (pill_name) {
             case "an_hun":
                 // 永久增加10生命值
-                // TODO
+                user.getAttributeInstance(EntityAttributes.GENERIC_MAX_HEALTH).setBaseValue(user.getMaxHealth() + 20f);
+                // TODO:限制使用次数
 
                 // TODO:完善丹药效果
 

@@ -17,11 +17,9 @@ public class ModEventListener {
     private static final double superiorHerbChance = 0.09;
     private static final double celestialHerbChance = 0.009;
     private static final double rareHerbChance = 0.001;
-
     public static void registerEvents() {
         PlayerBlockBreakEvents.AFTER.register((world, player, pos, state, blockEntity) -> {
             if (state.getBlock() instanceof CropBlock) {
-                // 判断作物是否成熟
                 final Random random = new Random();
                 if (state.get(CropBlock.AGE) == 7) {
                     double chance = random.nextDouble();

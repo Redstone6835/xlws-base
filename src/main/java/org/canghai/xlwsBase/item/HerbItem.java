@@ -5,6 +5,7 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.text.Text;
+import net.minecraft.util.Formatting;
 import net.minecraft.util.Hand;
 import net.minecraft.util.TypedActionResult;
 import net.minecraft.world.World;
@@ -27,7 +28,16 @@ public class HerbItem extends Item {
     public void appendTooltip(ItemStack stack, TooltipContext context, List<Text> tooltip, TooltipType type) {
         HerbCodec herbCodec = stack.get(Components.HERB_TYPE);
         if (herbCodec != null) {
-            tooltip.add(Text.translatable("item.xlws-base.herb.info."+herbCodec.getHerb_name()));
+            switch (herbCodec.getHerb_type()) {
+                case "superior_herb":
+                    tooltip.add(Text.translatable("item.xlws-base.herb.info." + herbCodec.getHerb_name()).formatted(Formatting.BLUE));
+                    break;
+                case "celestial_herb":
+                    tooltip.add(Text.translatable("item.xlws-base.herb.info." + herbCodec.getHerb_name()).formatted(Formatting.GOLD));
+                    break;
+                case "rare_herb":
+                    tooltip.add(Text.translatable("item.xlws-base.herb.info." + herbCodec.getHerb_name()).formatted(Formatting.RED));
+            }
         }
     }
 
