@@ -2,6 +2,7 @@ package org.canghai.xlwsBase;
 
 import net.fabricmc.api.ModInitializer;
 import org.canghai.xlwsBase.block.Blocks;
+import org.canghai.xlwsBase.command.DebugCommands;
 import org.canghai.xlwsBase.component.Components;
 import org.canghai.xlwsBase.entity.effect.Effects;
 import org.canghai.xlwsBase.event.ModEventsRegistry;
@@ -22,7 +23,9 @@ public class XlwsBase implements ModInitializer {
         Components.initialize();
         // 加载Effects类中的全部成员。
         Effects.initalize();
-        // 加载ModEventRegistry的全部成员。
+        // 加载ModEventRegistry类中的全部成员。
         ModEventsRegistry.registry();
+        // 加载DebugCommands类中的全部成员。
+        // DebugCommands.initialize();
     }
 }

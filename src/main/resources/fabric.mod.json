@@ -8,13 +8,13 @@
   "authors": [],
   "contact": {},
 
-  "license": "unlicense",
   "icon": "assets/xlws-base/icon.png",
 
   "environment": "*",
   "entrypoints": {
     "client": ["org.canghai.xlwsBase.client.XlwsBaseClient"],
-    "main": ["org.canghai.xlwsBase.XlwsBase"]
+    "main": ["org.canghai.xlwsBase.XlwsBase"],
+    "fabric-datagen": ["org.canghai.xlwsBase.DataGenerator"]
   },
 
   "mixins": [
