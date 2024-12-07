@@ -11,6 +11,8 @@ import net.minecraft.registry.entry.RegistryEntry;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.text.Text;
 import net.minecraft.util.Formatting;
+import net.minecraft.nbt.NbtCompound;
+import net.minecraft.network.packet.s2c.play.GameMessageS2CPacket;
 import net.minecraft.entity.attribute.EntityAttributes;
 import net.minecraft.entity.attribute.EntityAttributeModifier;
 import net.minecraft.util.Hand;
@@ -55,30 +57,27 @@ public class SuperiorPillItem extends Item {
         switch (pill_name) {
             case "hui_shen":
                 RegistryEntry<StatusEffect> healthRegenEffect = Effects.HEALTH_REGEN;
-                effect = new StatusEffectInstance(healthRegenEffect, 200, 0);
+                effect = new StatusEffectInstance(healthRegenEffect, 1200, 0);
                 user.addStatusEffect(effect);
                 break;
             case "ye_ming":
-                effect = new StatusEffectInstance(StatusEffects.NIGHT_VISION, 200, 0);
+                effect = new StatusEffectInstance(StatusEffects.NIGHT_VISION, 1200, 0);
                 user.addStatusEffect(effect);
                 break;
             case "kang_su":
-                effect = new StatusEffectInstance(StatusEffects.FIRE_RESISTANCE, 200, 0);
+                effect = new StatusEffectInstance(StatusEffects.FIRE_RESISTANCE, 1200, 0);
                 user.addStatusEffect(effect);
-                effect = new StatusEffectInstance(StatusEffects.WATER_BREATHING, 200, 0);
+                effect = new StatusEffectInstance(StatusEffects.WATER_BREATHING, 1200, 0);
                 user.addStatusEffect(effect);
                 break;
             case "jing_xin":
                 user.clearStatusEffects();
             case "cang_ti":
-                effect = new StatusEffectInstance(StatusEffects.INVISIBILITY, 200,0);
+                effect = new StatusEffectInstance(StatusEffects.INVISIBILITY, 1200,0);
                 user.addStatusEffect(effect);
             case "ming_gong":
             // Todo:将攻击力改成自定义属性
                 user.getAttributeInstance(EntityAttributes.GENERIC_ATTACK_DAMAGE).addPersistentModifier(new EntityAttributeModifier("custom_attack_damage_boost", 10, EntityAttributeModifier.Operation.ADD_VALUE));
-
-
-
                 break;
             // TODO:完善丹药效果
             default:
