@@ -11,7 +11,7 @@ import java.util.Random;
 /**
  *  实现药草掉落的事件监听逻辑
  */
-public class HerbDropEventListener {
+public class HerbDropCallback {
     private static final double superiorHerbChance = 0.09;
     private static final double celestialHerbChance = 0.009;
     private static final double rareHerbChance = 0.001;
