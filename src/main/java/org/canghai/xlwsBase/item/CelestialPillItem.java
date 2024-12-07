@@ -37,22 +37,13 @@ public class CelestialPillItem extends Item {
     @Override
     public String getTranslationKey(ItemStack stack) {
         PillCodec pillCodec = stack.get(Components.PILL_TYPE);
-        ArrayList<String> list = new ArrayList<>(Arrays.asList(super.getTranslationKey(stack).split("\\.")));
-        if (list.size() > 1) {
-            list.add(list.size() - 1, pillCodec.getPill_type());
-        } else {
-            // 处理列表为空或只有一个元素的情况
-            list.add(pillCodec.getPill_type());  // 直接添加到列表末尾
+        if (pillCodec != null) {
+            String name = pillCodec.getPill_name();
+            return super.getTranslationKey(stack) + "." + name;
         }
-        // 将List转化为String
-        StringBuilder sb = new StringBuilder();
-        for (String s : list) {
-            sb.append(s).append(".");
+        else {
+            return super.getTranslationKey(stack) + ".null";
         }
-        if (!sb.isEmpty()) {
-            sb.setLength(sb.length() - 1);
-        }
-        return sb.toString();
     }
 
     @Override
