@@ -22,6 +22,7 @@ import net.minecraft.world.World;
 import org.canghai.xlwsBase.component.Components;
 import org.canghai.xlwsBase.component.PillComponent;
 import org.canghai.xlwsBase.entity.effect.Effects;
+import org.canghai.xlwsBase.player.data.PillUseContentData;
 
 import java.util.List;
 
@@ -56,6 +57,7 @@ public class SuperiorPillItem extends Item {
         StatusEffectInstance effect;
         switch (pill_name) {
             case "hui_shen":
+                PillUseContentData useContentData = new PillUseContentData(0);
                 RegistryEntry<StatusEffect> healthRegenEffect = Effects.HEALTH_REGEN;
                 effect = new StatusEffectInstance(healthRegenEffect, 1200, 0);
                 user.addStatusEffect(effect);

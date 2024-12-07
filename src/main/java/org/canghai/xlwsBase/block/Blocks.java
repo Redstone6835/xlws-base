@@ -38,9 +38,6 @@ public class Blocks {
             new Block(AbstractBlock.Settings.create().sounds(BlockSoundGroup.STONE)),
             "alchemy_furnace"
     );
-
-    public static final ScreenHandlerType<AlchemyFurnaceScreenHandler> ALCHEMY_FURNACE_SCREEN_HANDLER = Registry.register(net.minecraft.registry.Registries.SCREEN_HANDLER, Identifier.of(XlwsBase.MOD_ID, "alchemy_funace_block"), new ScreenHandlerType<>(AlchemyFurnaceScreenHandler::new, FeatureSet.empty()));
-
     /**
      * 添加静态初始化方法，确保该类被加载。
      * 该方法用于占位。

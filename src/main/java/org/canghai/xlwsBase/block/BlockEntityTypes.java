@@ -16,7 +16,7 @@ public class BlockEntityTypes {
         return Registry.register(Registries.BLOCK_ENTITY_TYPE, Identifier.of(XlwsBase.MOD_ID, path), blockEntityType);
     }
     // 注册方块实体
-    public static final BlockEntityType<AlchemyFurnaceBlockEntity>  ALCHEMY_FURNACE = register(
+    public static final BlockEntityType<AlchemyFurnaceBlockEntity> ALCHEMY_FURNACE = register(
             "alchemy_furnace",
             BlockEntityType.Builder.create(AlchemyFurnaceBlockEntity::new, Blocks.ALCHEMY_FURNACE).build()
     );

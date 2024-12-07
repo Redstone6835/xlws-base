@@ -15,8 +15,8 @@ import net.minecraft.util.math.BlockPos;
 import org.canghai.xlwsBase.block.BlockEntityTypes;
 import org.canghai.xlwsBase.block.screen.AlchemyFurnaceScreenHandler;
 
-public class AlchemyFurnaceBlockEntity  extends BlockEntity implements NamedScreenHandlerFactory,ImplementedInventory {
-    private DefaultedList<ItemStack> inputStacks;
+public class AlchemyFurnaceBlockEntity extends BlockEntity implements NamedScreenHandlerFactory,ImplementedInventory {
+    private final DefaultedList<ItemStack> inputStacks;
 
     public AlchemyFurnaceBlockEntity(BlockPos pos, BlockState state) {
         super(BlockEntityTypes.ALCHEMY_FURNACE, pos, state);
@@ -58,5 +58,15 @@ public class AlchemyFurnaceBlockEntity  extends BlockEntity implements NamedScre
     @Override
     public void markDirty() {
         super.markDirty();
+    }
+
+    @Override
+    public boolean canPlayerUse(PlayerEntity player) {
+        return ImplementedInventory.super.canPlayerUse(player);
+    }
+
+    @Override
+    public void onOpen(PlayerEntity player) {
+        ImplementedInventory.super.onOpen(player);
     }
 }
