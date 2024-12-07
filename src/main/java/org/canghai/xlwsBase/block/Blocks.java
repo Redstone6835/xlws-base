@@ -7,11 +7,14 @@ import net.minecraft.block.Block;
 import net.minecraft.item.*;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
+import net.minecraft.resource.featuretoggle.FeatureSet;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.text.Text;
+import net.minecraft.screen.ScreenHandlerType;
 import net.minecraft.util.Identifier;
 import org.canghai.xlwsBase.XlwsBase;
+import org.canghai.xlwsBase.block.screen.AlchemyFurnaceScreenHandler;
 
 /**
  * 将所有需要注册的方块全部添加至Blocks类中，和mojang的思路同理。
@@ -36,11 +39,14 @@ public class Blocks {
             "alchemy_furnace"
     );
 
+    public static final ScreenHandlerType<AlchemyFurnaceScreenHandler> ALCHEMY_FURNACE_SCREEN_HANDLER = Registry.register(net.minecraft.registry.Registries.SCREEN_HANDLER, Identifier.of(XlwsBase.MOD_ID, "alchemy_funace_block"), new ScreenHandlerType<>(AlchemyFurnaceScreenHandler::new, FeatureSet.empty()));
+
     /**
      * 添加静态初始化方法，确保该类被加载。
      * 该方法用于占位。
      * 该方法在JVM上入栈时，该类的全部内容都会被加载，从而达到加载该类中的成员的目的。
      */
     public static void initialize() {
+
     }
 }

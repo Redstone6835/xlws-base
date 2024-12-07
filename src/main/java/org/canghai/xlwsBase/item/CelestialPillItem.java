@@ -13,10 +13,8 @@ import net.minecraft.util.Identifier;
 import net.minecraft.util.TypedActionResult;
 import net.minecraft.world.World;
 import org.canghai.xlwsBase.component.Components;
-import org.canghai.xlwsBase.component.PillCodec;
+import org.canghai.xlwsBase.component.PillComponent;
 
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class CelestialPillItem extends Item {
@@ -26,19 +24,19 @@ public class CelestialPillItem extends Item {
 
     @Override
     public void appendTooltip(ItemStack stack, TooltipContext context, List<Text> tooltip, TooltipType type) {
-        PillCodec pillCodec = stack.get(Components.PILL_TYPE);
+        PillComponent pillComponent = stack.get(Components.PILL_TYPE);
         String pill_name = "";
-        if (pillCodec != null) {
-            pill_name = pillCodec.getPill_name();
+        if (pillComponent != null) {
+            pill_name = pillComponent.pill_name();
         }
         tooltip.add(Text.translatable("item.xlws-base.celestial_pill.info." + pill_name).formatted(Formatting.GOLD));
     }
 
     @Override
     public String getTranslationKey(ItemStack stack) {
-        PillCodec pillCodec = stack.get(Components.PILL_TYPE);
-        if (pillCodec != null) {
-            String name = pillCodec.getPill_name();
+        PillComponent pillComponent = stack.get(Components.PILL_TYPE);
+        if (pillComponent != null) {
+            String name = pillComponent.pill_name();
             return super.getTranslationKey(stack) + "." + name;
         }
         else {
@@ -49,8 +47,8 @@ public class CelestialPillItem extends Item {
     @Override
     public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand) {
 
-        PillCodec pillCodec = user.getStackInHand(hand).get(Components.PILL_TYPE);
-        String pill_name = pillCodec.getPill_name();
+        PillComponent pillComponent = user.getStackInHand(hand).get(Components.PILL_TYPE);
+        String pill_name = pillComponent.pill_name();
         switch (pill_name) {
             case "an_hun":
                 // 永久增加10生命值

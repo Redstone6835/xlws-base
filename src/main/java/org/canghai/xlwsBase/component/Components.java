@@ -12,17 +12,17 @@ import org.canghai.xlwsBase.XlwsBase;
  */
 public class Components {
     // 丹药信息。
-    public static final DataComponentType<PillCodec> PILL_TYPE = Registry.register(
+    public static final DataComponentType<PillComponent> PILL_TYPE = Registry.register(
             Registries.DATA_COMPONENT_TYPE,
             Identifier.of(XlwsBase.MOD_ID, "pill_type"),
-            DataComponentType.<PillCodec>builder().codec(Codecs.PILL_CODEC).build()
+            DataComponentType.<PillComponent>builder().codec(PillComponent.CODEC).build()
     );
 
     // 药草种类。
-    public static final DataComponentType<HerbCodec> HERB_TYPE = Registry.register(
+    public static final DataComponentType<HerbComponent> HERB_TYPE = Registry.register(
             Registries.DATA_COMPONENT_TYPE,
             Identifier.of(XlwsBase.MOD_ID, "herb_type"),
-            DataComponentType.<HerbCodec>builder().codec(Codecs.HERB_CODEC).build()
+            DataComponentType.<HerbComponent>builder().codec(HerbComponent.CODEC).build()
     );
 
     // 玩家攻击力
