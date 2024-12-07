@@ -1,20 +1,14 @@
 package org.canghai.xlwsBase.block;
 
-import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
-import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
-import net.minecraft.item.*;
+import net.minecraft.item.BlockItem;
+import net.minecraft.item.Item;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
-import net.minecraft.resource.featuretoggle.FeatureSet;
-import net.minecraft.registry.RegistryKey;
 import net.minecraft.sound.BlockSoundGroup;
-import net.minecraft.text.Text;
-import net.minecraft.screen.ScreenHandlerType;
 import net.minecraft.util.Identifier;
 import org.canghai.xlwsBase.XlwsBase;
-import org.canghai.xlwsBase.block.screen.AlchemyFurnaceScreenHandler;
 
 /**
  * 将所有需要注册的方块全部添加至Blocks类中，和mojang的思路同理。

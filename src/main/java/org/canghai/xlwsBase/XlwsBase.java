@@ -4,7 +4,6 @@ import net.fabricmc.api.ModInitializer;
 import org.canghai.xlwsBase.block.BlockEntityTypes;
 import org.canghai.xlwsBase.block.Blocks;
 import org.canghai.xlwsBase.block.screen.ScreenHandlers;
-import org.canghai.xlwsBase.command.DebugCommands;
 import org.canghai.xlwsBase.component.Components;
 import org.canghai.xlwsBase.entity.effect.Effects;
 import org.canghai.xlwsBase.event.ModEventsRegistry;
