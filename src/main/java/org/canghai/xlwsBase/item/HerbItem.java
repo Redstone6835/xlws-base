@@ -37,6 +37,10 @@ public class HerbItem extends Item {
                     break;
                 case "rare_herb":
                     tooltip.add(Text.translatable("item.xlws-base.herb.info." + herbCodec.getHerb_name()).formatted(Formatting.RED));
+                    break;
+                default:
+                    tooltip.add(Text.translatable("item.xlws-base.herb.info." + "null").formatted(Formatting.WHITE));
+                    break;
             }
         }
     }

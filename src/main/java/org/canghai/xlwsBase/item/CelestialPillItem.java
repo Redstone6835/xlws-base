@@ -69,7 +69,8 @@ public class CelestialPillItem extends Item {
                 // TODO:完善丹药效果
 
             default:
-                // TODO
+                break;
+
         }
         user.playSound(SoundEvent.of(new Identifier("minecraft", "entity.ender_dragon.ambient")));
         return super.use(world, user, hand);
