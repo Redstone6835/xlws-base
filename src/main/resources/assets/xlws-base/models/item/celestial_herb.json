@@ -2,5 +2,8 @@
   "parent": "item/generated",
   "textures": {
     "layer0": "xlws-base:item/celestial_herb"
-  }
+  },
+  "overrides": [
+    {"predicate": {"herb_name": "ren_shen"}, "model": "xlws-base:item/herb/ren_shen"}
+  ]
 }

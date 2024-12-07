@@ -43,10 +43,6 @@ public class Items {
 
     // 添加物品。
     // 上品药草。
-    public static final Item SUPERIOR_HERB = register(
-            new HerbItem(new Item.Settings().component(Components.HERB_TYPE, new HerbCodec("superior_herb","test"))),
-            "superior_herb"
-    );
     public static final Item JIN_YIN_HUA = register(
             new HerbItem(new Item.Settings().component(Components.HERB_TYPE, new HerbCodec("superior_herb","jin_yin_hua"))),
             "superior_herb"
@@ -72,10 +68,6 @@ public class Items {
             "superior_herb"
     );
     // 仙品药草。
-    public static final Item CELESTIAL_HERB = register(
-            new HerbItem(new Item.Settings().component(Components.HERB_TYPE, new HerbCodec("celestial_herb","test"))),
-            "celestial_herb"
-    );
     public static final Item REN_SHEN = register(
             new HerbItem(new Item.Settings().component(Components.HERB_TYPE, new HerbCodec("celestial_herb","ren_shen"))),
             "celestial_herb"
@@ -101,10 +93,6 @@ public class Items {
             "celestial_herb"
     );
     // 稀世药草。
-    public static final Item RARE_HERB = register(
-            new HerbItem(new Item.Settings().component(Components.HERB_TYPE, new HerbCodec("rare_herb","test"))),
-            "rare_herb"
-    );
     public static final Item TIAN_SHAN_XUE_LIAN = register(
             new HerbItem(new Item.Settings().component(Components.HERB_TYPE, new HerbCodec("rare_herb","tian_shan_xue_lian"))),
             "rare_herb"
@@ -215,9 +203,6 @@ public class Items {
         Registry.register(Registries.ITEM_GROUP, SERVER_ITEM_GROUP_KEY, SERVER_ITEM_GROUP);
         ItemGroupEvents.modifyEntriesEvent(SERVER_ITEM_GROUP_KEY).register(itemGroup -> {
             itemGroup.add(Blocks.ALCHEMY_FURNACE.asItem());
-            itemGroup.add(SUPERIOR_HERB);
-            itemGroup.add(CELESTIAL_HERB);
-            itemGroup.add(RARE_HERB);
             itemGroup.add(JIN_YIN_HUA);
             itemGroup.add(HUANG_LIAN);
             itemGroup.add(CHEN_XIANG);
